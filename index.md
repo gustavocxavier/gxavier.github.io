@@ -7,12 +7,16 @@ _Federal University of Paraiba_
 I specialize in combining data science with empirical finance. My research interests are international finance, capital markets, machine learning, natural language processing, and empirical asset pricing.
 
 **Education**
+
 PhD in Finance
   Federal University of Paraiba (2018-2021)
+  
 Visiting Scholar
   University of Tennessee Knoxville (9/2019 - 6/2020)
+
 Research Master in Business Administration
   FGV-SP (2009-2010)
+
 Bachelor Business Administration
   UFCG (2001-2007)
 
