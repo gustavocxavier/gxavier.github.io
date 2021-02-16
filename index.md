@@ -7,11 +7,10 @@ I specialize in combining data science with empirical finance. My research inter
 
 # Education
 
-## PhD in Finance
-Federal University of Paraiba (2018-2021)
-  
-## Visiting Scholar
-University of Tennessee Knoxville (9/2019 - 6/2020)
+- PhD in Finance
+  - Federal University of Paraiba (2018-2021)
+- Visiting Scholar
+  - University of Tennessee Knoxville (9/2019 - 6/2020)
 
 ## Research Master in Business Administration
 FGV-SP (2009-2010)
