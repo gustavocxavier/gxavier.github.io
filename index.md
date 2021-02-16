@@ -1,7 +1,7 @@
 ## Gustavo Correia Xavier
-<sub>
-  PhD Candidate at Federal University of Paraiba ([UFPB](https://www.ufpb.br/acieng)) (and Visiting Scholar at UTK)
-</sub>
+PhD Candidate at  
+
+I am a PhD Candidate at Federal University of Paraiba ([UFPB](https://www.ufpb.br/acieng)) and was a Visiting Scholar at [University of Tennessee Knoxville](https://www.utk.edu/). I specialize in combining data science with empirical finance. My research interests are international finance, capital markets, machine learning, natural language processing, and empirical asset pricing.
 
 
 <!--
