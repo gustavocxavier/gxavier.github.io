@@ -6,9 +6,9 @@ _Federal University of Paraiba_
 **Bio**
 I specialize in combining data science with empirical finance. My research interests are international finance, capital markets, machine learning, natural language processing, and empirical asset pricing.
 
-**Education**
+## Education
 
-PhD in Finance
+# PhD in Finance
 
   Federal University of Paraiba (2018-2021)
   
