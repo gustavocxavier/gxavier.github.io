@@ -1,6 +1,5 @@
 ## Gustavo Correia Xavier
-- _PhD Candidate in Finance_
-- _Federal University of Paraiba_
+_PhD Candidate in Finance at Federal University of Paraiba_
 
 
 ## Bio
