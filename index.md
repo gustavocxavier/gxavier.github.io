@@ -15,7 +15,7 @@ I specialize in combining data science with empirical finance. My research inter
 
 **Master in Business Administration** -- Fundação Getulio Vargas (2009-2010)
 
-**Bachelor Business Administration** -- UFCG (2001-2007)
+**Bachelor Business Administration** -- Federal University of Campina Grande (2001-2007)
 
 
 <!--
