@@ -9,13 +9,13 @@ I specialize in combining data science tools and financial economics theory to a
 
 ## Education
 
-**PhD in Finance** -- Federal University of Paraiba (2018-2021)
+**PhD in Finance** -- UFPB - Federal University of Paraiba (2018-2021)
 
-**Visiting Scholar** -- University of Tennessee Knoxville (9/2019 - 6/2020)
+**Visiting Scholar** -- UTK - University of Tennessee Knoxville (9/2019 - 6/2020)
 
-**Master in Business Administration** -- Fundação Getulio Vargas (2009-2010)
+**Master in Business Administration** -- FGV - Getúlio Vargas Foundation (2009-2010)
 
-**Bachelor Business Administration** -- Federal University of Campina Grande (2001-2007)
+**Bachelor Business Administration** -- UFCG - Federal University of Campina Grande (2001-2007)
 
 
 <!--
