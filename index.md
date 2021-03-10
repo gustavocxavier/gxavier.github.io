@@ -1,4 +1,4 @@
-About me
+About me...
 
 ## Gustavo Correia Xavier
 _PhD Candidate in Finance at Federal University of Paraiba_
