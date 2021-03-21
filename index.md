@@ -1,3 +1,9 @@
+<!--
+blog 
+https://towardsdatascience.com/five-minutes-to-your-own-website-fd0b43cbd886
+https://github.com/jameshamann/jekyll-display-medium-posts
+-->
+
 About me...
 
 ## Gustavo Correia Xavier
