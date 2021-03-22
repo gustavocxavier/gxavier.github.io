@@ -15,9 +15,9 @@ I specialize in combining data science tools and financial economics theory to a
 
 ## Education
 
-**PhD in Finance** -- UFPB - Federal University of Paraiba (2018-2021)
+**PhD in Finance** -- [UFPB - Federal University of Paraiba](https://www.ufpb.br/acieng/contents/menu/institutional/discover-ufpb-campi) (2018-2021)
 
-**Visiting Scholar** -- UTK - University of Tennessee Knoxville (9/2019 - 6/2020)
+**Visiting Scholar** -- [UTK - University of Tennessee Knoxville](https://haslam.utk.edu/economics) (9/2019 - 6/2020)
 
 **Master in Business Administration** -- FGV - Getúlio Vargas Foundation (2009-2010)
 
