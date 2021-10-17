@@ -42,7 +42,7 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Referência Básica
 
-MORETTIN, Pedro Alberto; BUSSAB, Wilton Oliveira. **Estatística básica.** Saraiva Educação SA, 2017. [`Link do Minha Biblioteca`](https://www.google.com)[^1]
+MORETTIN, Pedro Alberto; BUSSAB, Wilton Oliveira. **Estatística básica.** Saraiva Educação SA, 2017. [`Link do Minha Biblioteca`](https://www.google.com).[^1]
 
-[^1] O link do minha biblioteca é exclusivo para alunos UFPB. Deve-se primeiro acessar o SIGAA em outra aba para então clicar no link de acesso.
+[^1]: O link do minha biblioteca é exclusivo para alunos UFPB. Deve-se primeiro acessar o SIGAA em outra aba para então clicar no link de acesso.
 
