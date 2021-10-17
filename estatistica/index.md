@@ -1,24 +1,10 @@
 Curso de Estatística
 --------------------
 
-Curso de Estatística - Professor Gustavo C. Xavier
-
-E-mail: gustavocorreiaxavier@gmail.com
+Professor Gustavo C. Xavier -- E-mail: gustavocorreiaxavier@gmail.com
 
 ## Conteúdo
 I specialize in combining data science tools and financial economics theory to advance empirical finance knowledge. My research interests are international finance, capital markets, machine learning, natural language processing, and empirical asset pricing.
-
-## Education
-
-**PhD in Finance** -- UFPB - Federal University of Paraiba (2018-2021)
-
-**Visiting Scholar** -- UTK - University of Tennessee Knoxville (9/2019 - 6/2020)
-
-**Master in Business Administration** -- FGV - Getúlio Vargas Foundation (2009-2010)
-
-**Bachelor Business Administration** -- UFCG - Federal University of Campina Grande (2001-2007)
-
-
 
 ## Welcome to GitHub Pages
 
@@ -54,6 +40,7 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gustavocxavier/gxavier.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Referëncia Básica
+### Referência Básica
 
 MORETTIN, Pedro Alberto; BUSSAB, Wilton Oliveira. **Estatística básica.** Saraiva Educação SA, 2017. [Link do Minha Biblioteca](https://www.google.com) (Exclusivo para alunos UFPB com acesso ao SIGAA. Deve-se primeiro acessar o SIGAA em outra aba para então clicar no link de acesso).
+
