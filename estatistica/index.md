@@ -1,8 +1,8 @@
-Some file here
---------------
+Curso de Estatística
+--------------------
 
-## Test
-_Testing_
+Curso de Estatística - Professor Gustavo C. Xavier
+E-mail: gustavocorreiaxavier@gmail.com
 
 ## Bio
 I specialize in combining data science tools and financial economics theory to advance empirical finance knowledge. My research interests are international finance, capital markets, machine learning, natural language processing, and empirical asset pricing.
