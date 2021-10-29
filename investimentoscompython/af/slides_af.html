@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Mercado de Capitais</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gustavo C. Xavier" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Mercado de Capitais
+## Avaliação de Ações
+### Gustavo C. Xavier
+### UFPB – CCHSA | <a href="http://www.cchsa.ufpb.br/coordadm">Curso de Administração</a>
+
+---
+
+
+
+&lt;style type="text/css"&gt;
+# CSS for including pauses in printed PDF output (see bottom of lecture)
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+&lt;/style&gt;
+
+
+
+
+# Table of contents
+
+1. [Avaliação de Ações](#avaliacao)
+
+2. [Análise Técnica vs Fundamentalista](#ATvsAF)
+
+3. [Métodos de Análise Fundamentalista](#analisefundamentalista)
+
+4. [Avaliação por Múltiplos](#multiplos)
+
+5. [Avaliação pelo método do fluxo de caixa descontado](#metodoFCD)
+
+---
+class: inverse, center, middle
+name: avaliacao
+
+# Avaliação de Ações
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+&lt;!-- Aqui é a capa --&gt;
+
+---
+
+# O que é valor?
+
+### Qual o principal objetivo de uma empresa?
+
+<svg aria-hidden="true" role="img" viewBox="0 0 192 512" style="height:1em;width:0.38em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"/></svg> Lucro?
+
+--
+
+### Suponha que...
+
+* Um amigo está abrindo um novo negócio e lhe convidou para ser sócio neste novo empreendimento.
+
+  * Investimento necessário para máquinas, equipamentos e capital de giro: $1.000.000
+  
+  * Distribuição de Resultado (Lucro) anual prometido: $15.000
+
+  * É um bom investimento hoje?
+
+--
+
+## Qual a rentabilidade?
+
+--
+
+- Rentabilidade = Ganho / Investimento
+- Rentabilidade = 15.000 ao ano / 1.000.000 = 1,5% ao ano
+- Você está satisfeito? Este é um bon negócio?
+
+---
+class: inverse, center, middle
+name: ATvsAF
+
+# Análise Técnica vs Fundamentalista
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+(Clique [aqui](https://www.investidor.gov.br/portaldoinvestidor/export/sites/portaldoinvestidor/publicacao/Livro/livro_TOP_mercado_de_valores_mobiliarios_brasileiro_4ed.pdf) para acessar material recomendado sobre o assunto.)
+
+---
+
+# Análise Técnica x Fundamentalista
+
+Os modelos de avaliação procuram em essência, projetar o comportamento futuro dos ativos, formulando previsões com reações a variações de preços de mercado.
+
+--
+
+| Análise Técnica                | Análise Fundamentalista           | 
+|:-|-:|
+| Padrões Gráficos observados    | Existência de um valor intrínsico |
+| Ciclos                         | Fundamentos econômico-financeiros |
+| Repetições                     | Projeções e análise de mercado    |
+| Baseada no desempenho histórico| Projeções de crescimento          |
+|                                | Projeções de margem               |
+|                                | Estimativa de fluxo de caixa      |
+|                                | Estimativa de risco               |
+
+--
+
+O ideal é que haja uma convergência entre ambos. Existem analistas que usam a Análise Fundamentalista para selecionar ações e a Análise Técnica para encontrar o melhor momento de comprar a ação.
+
+---
+
+class: inverse, center, middle
+name: analisefundamentalista
+
+# Análise Fundamentalista
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+# Análise Fundamentalista
+
+## Tipos de Análise Fundamentalista
+
+* Análise Top Down
+  * De geral(macro) para entender o específico (micro)
+  * Se inicia pela construção de cenários econômicos como projeção de PIB, inflação, taxas de juros, etc., e a partir desses resultados são desenhados o desempenho esperado dos diversos setores, e as empresas mais diretamente.
+  * Em resumo, a análise é feita na seguinte ordem: 1. Análise Econômica / 2. Análise Setorial / 3. Análise de Empresas
+
+&lt;/br&gt;
+
+* Análise Bottom Up
+  * Do micro (específico) para o macro (geral)
+  * Focada nos fundamentos da empresa, seu desempenho histórico e pespectivas futuras de crescimento e resultados
+  * Em resumo, a análise é feita na seguinte ordem: 1. Análise de Empresas / 2. Análise Econômica /3. Análise Setorial
+
+&lt;!-- Retirado de Finanças 101 - https://youtu.be/8wWtbSSd6Mw?t=1052 --&gt;
+
+---
+# Análise Fundamentalista (cont.)
+
+## Métodos de Avaliação de Empresas
+
+*Avaliação por múltiplos*
+* Análise é normalmente feira por grupo de pares ou **comparáveis**.
+* Em outras palavras, precisamos identificar um grupo de pares, ou seja, empresas que sejam concorrentes nos mesmos mercados, que tenham ativos semelhantes e que operem de modo parecido.
+* Isso apresenta problemas óbvios, pois não há duas **empresas idênticas**. Além disso, a opção de quais empresas utilizar como base de comparação é subjetiva.
+
+*Avaliação pelo Fluxo de Caixa Descontado*
+* Baseado projeções em projeções de fluxo de caixa
+  * Receitas, margem, dividendos e FCFE&lt;sup&gt;1&lt;/sup&gt;
+* E em premissas de crescimento.
+* E em estimações do custo de capital.
+
+&lt;font size="1"&gt;
+.footnote[[1] FCFE é a sigla para Free Cash Flow to Equity ou Fluxo de Caixa do Acionista. O FCFE trata-se de uma medida que considera o fluxo de caixa operacional menos a o reinvestimento e a parte paga aos credores. Essa medida é especialmente útil para empresas que não pagam dividendos.]
+&lt;/font&gt;
+---
+class: inverse, center, middle
+name: multiplos
+
+# Avaliação por Múltiplos
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+# Avaliação por Múltiplos
+
+## O que é um múltiplo?
+
+`$$Múltiplo = \frac{Numerador}{Denominador}$$`
+--
+
+## Numerador
+- O quanto está você pagando pelo ativo
+  - Valor de mercado do PL (Preço)
+  - Valor de mercado da Firma
+
+&lt;!-- - Valor de mercado dos ativos da empresa --&gt;
+
+## Denominador
+- O que você está recebendo em troca
+  - Receitas&lt;font size="3"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/font&gt;
+  - Lucros
+  - Fluxo de Caixa
+  - Valor Contábil
+
+
+&lt;font size="1"&gt;
+.footnote[[1] Para alguns tipos de empresas, os analistas costumam usar drivers de receitas futuras em vez das receitas contábeis. Alguns exemplos de drivers são número de clientes, assinantes ou usuários.]
+&lt;/font&gt;
+
+&lt;!-- Fonte: https://youtu.be/WDZwqSierZ4?t=551 --&gt;
+  
+---
+# Avaliação por Múltiplos (cont.)
+
+### Lucro por Ação (LPA) ou Earnings Per Share (EPS)
+
+&lt;/br&gt;
+
+`$$LPA = EPS = \frac{Lucro\:Líquido}{Número\:de\:Ações\:Emitidas}$$`
+&lt;/p&gt;
+
+- Resultado gerado para cada ação
+- Qual seria o pagamento de dividendos por ação caso a empresa distribuísse 100% do seu lucro em dividendos
+  - **Potencial máximo de pagamento de dividendos por ação**
+- **Quanto maior este indicador melhor**, pois quanto mais lucro a empresa consegue gerar por cada ação, mais valor a empresa tem para os investidores
+
+
+&lt;!-- - É comum as empresas ajustarem o lucro líquido para itens extraordinários e também considerar potenciais diluições --&gt;
+&lt;!-- - O número de ações emitidas poder ser computado como o valo no final do período ou uma média ponderada durante o período. --&gt;
+&lt;!-- https://youtu.be/8wWtbSSd6Mw?t=1184 --&gt;
+
+---
+# Avaliação por Múltiplos (cont.)
+
+### Dividend Yield
+
+&lt;/br&gt;
+
+`$$DY = \frac{Dividendos\:Pagos\:por\:Ação}{Preço\:da\:Ação}$$`
+
+&lt;/p&gt;
+
+- **Rentabilidade do investidor sobre o capital investido na forma de dividendos e proventos**
+- Qual será a rentabilidade do investidor na forma de dividendos ou proventos caso compre o ativo hoje assumingo que seja mantido o mesmo nível de proventos histórico
+- **Alto DY pode indicar**: (1) Que a empresa paga bastante dividendos (2) Que o preço da ação está baixo
+
+---
+# Avaliação por Múltiplos (cont.)
+
+### Dividend Yield (cont.)
+
+&lt;/br&gt;
+
+`$$DY = \frac{Dividendos\:Pagos\:por\:Ação}{Preço\:da\:Ação}$$`
+
+&lt;/p&gt;
+
+### Exemplos:
+- Empresa A: Ação está sendo cotada a &amp;#36;20,00 e a empresa pagou &amp;#36;1,50 de dividendos por ação nos últimos 4 trimestres
+  - Resposta: Dividend Yield = Dividendos por Ação / Preço Corrente da ação = &amp;#36;1,50/&amp;#36;20 = 7,5%
+--
+
+- Empresa B: Ação está sendo cotada a &amp;#36;30,00 e a empresa pagou &amp;#36;1,50 de dividendos por ação nos últimos 4 trimestres&lt;/font&gt;
+  - Resposta?
+
+--
+Dividend Yield = Dividendos por Ação / Preço Corrente da ação = &amp;#36;1,50/&amp;#36;30 = 5%.
+
+
+&lt;!-- https://youtu.be/8wWtbSSd6Mw?t=1644 --&gt;
+
+---
+# Avaliação por Múltiplos (cont.)
+
+### P/E - Price Earnings ou P/L
+
+&lt;/br&gt;
+
+`$$P/E = \frac{Preço\:da\:Ação}{Lucro\:por\:Ação} = \frac{Valor\:de\:Mercado\:do\:PL}{Lucro\:Líquido}$$`
+
+&lt;/br&gt;
+
+- Relação entre o preço da ação e o lucro gerado por ação
+- Número de anos que o investidor demoraria para recuperar o valor pago mantendo o nível de lucro constante
+  - Exemplo P/E = 10x. Se o investidor comprar a ação dessa empresa e a mesma manter o mesmo nível de lucro atual e distribuir 100% do lucro com dividendos demoraria 10 anos recebendo dividendos anuais para recuperar o investimento.
+- Invertendo o P/E chegamos em uma estimativa de rentabilidade para o acionista
+  - Exemplo P/E = 10x: Ao comprar a ação da empresa, o investidor espera uma rentabilidade anual de 10%(1/10) mantendo-se o mesmo nível de lucro, e assumindo distribuição de 100% do lucro como dividendos.
+
+&lt;!-- https://youtu.be/8wWtbSSd6Mw?t=2137 --&gt;
+
+---
+# Avaliação por Múltiplos (cont.)
+
+### P/E - Price Earnings ou P/L (cont.)
+
+&lt;/br&gt;
+
+`$$P/E = \frac{Preço\:da\:Ação}{Lucro\:por\:Ação} = \frac{Valor\:de\:Mercado\:do\:PL}{Lucro\:Líquido}$$`
+
+&lt;/br&gt;
+
+- **Quanto maior P/E mais o investidor espera crescimento futuro nos lucros ou pode ser um sinal que o preço da açãoo está barata**
+- Se o P/E for baixo em relação às outras empresas do setor, pode ser sinal que o preço está baixo ou que o nível de lucro está alto
+- Não é possível calcular para empresas com prejuízo.
+
+
+&lt;!-- https://youtu.be/8wWtbSSd6Mw?t=2137 --&gt;
+
+---
+
+# Avaliação por Múltiplos (cont.)
+
+### Price-to-Book ou Market-to-Book
+
+`$$market\!-\!to\!-\!book = \frac{Valor\:de\:Mercado\:(Market\:Cap)}{Valor\:Contábio\:do\:PL}$$`
+- O valor de mercado reflete as expectativas futuras
+- O valor contábil reflete o registro histórico (passado)
+- Quanto maior este indicador mairo as oportunidades de crescimento dos resultados da empresa uma vez que o valor de mercado considera as expectativas do mercado para o futuro da firma e o valor contábio o passado.
+- Se o indicador for baixo em relação às outras empresas do setor, pode ser sinal que o preço está baixo.
+- Não pode ser calculado para empresas com PL negativo (passivo a descoberto)
+&lt;!-- https://youtu.be/8wWtbSSd6Mw?t=2543 --&gt;
+
+---
+
+# Avaliação por Múltiplos (cont.)
+
+### Payout Ratio = Dividendos / Lucro Líquido
+
+`$$Payout\:Ratio = \frac{Dividendos\:Distribuídos}{Lucro\:Líquido}$$`
+&lt;!-- https://youtu.be/8wWtbSSd6Mw?t=1392 --&gt;
+
+- Quanto do lucro gerado por áção é distribuído aos acionistas na forma de dividendos (proporção = %)
+- Um baixo payout ratio pode indicar maior volume de reinvestimento por parte da empresa
+
+**Exemplos**
+
+- Empresa A: Lucro por Ação de &amp;#36;1,00 e Dividendos por Ação de &amp;#36;0,60
+  - Resposta: Payout Ratio = Dividendos por Ação / Lucro por Ação = &amp;#36;0,60/&amp;#36;1,00 = 60%
+--
+- Empresa A: Lucro por Ação de &amp;#36;2,00 e Dividendos por Ação de &amp;#36;1,50
+  - Resposta: ?
+
+--
+Payout Ratio = Dividendos por Ação / Lucro por Ação = &amp;#36;1,50/&amp;#36;2,00 = 75%
+
+
+---
+class: inverse, center, middle
+name: metodoFCD
+
+# Avaliação pelo método do FCD
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+FDC = Fluxo de Caixa Descontado
+
+&lt;!-- --- --&gt;
+&lt;!-- # O que mais? --&gt;
+
+&lt;!-- Agora é que a coisa fica interessante, mas eu vou parar por aqui. --&gt;
+&lt;!-- There's a lot more to say, but I think we'll stop now for today's lecture. --&gt;
+
+&lt;!-- We also haven't touched on ggplot2's relationship to "tidy" data. --&gt;
+&lt;!--   - It actually forms part of a suite of packages collectively known as the [tidyverse](https://www.tidyverse.org/). --&gt;
+&lt;!--   - We will get back to this in Lecture 5. --&gt;
+
+&lt;!-- Rest assured, you will be using ggplot2 throughout the rest of this course and developing your skills along the way. --&gt;
+&lt;!-- - Your very first assignment (coming up) is a chance specifically to hone some of those skills. --&gt;
+
+&lt;!-- In the meantime, I want you to do some reading and practice on your own. Pick either of the following (or choose among the litany of online resources) and work through their examples: --&gt;
+&lt;!-- - [Chapter 3](https://r4ds.had.co.nz/data-visualisation.html) of *R for Data Science* by Hadley Wickham and Garett Grolemund. --&gt;
+&lt;!-- - [*Data Visualization: A Practical Guide*](https://socviz.co/makeplot.html) by Kieran Healy. --&gt;
+&lt;!-- - [Designing ggplots](https://designing-ggplots.netlify.com) by Malcom Barrett. --&gt;
+
+&lt;!-- --- --&gt;
+&lt;!-- class: inverse, center, middle --&gt;
+
+&lt;!-- # Próxima aula: Avaliação pelo Método de FCD no detalhe. --&gt;
+&lt;!-- &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt; --&gt;
+
+---
+### Obrigado!
+
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"/></svg> https://github.com/uo-ec607 --&gt;
+
+&lt;!-- You'll soon receive access to a quarter-specific copy of this repo, where we  --&gt;
+&lt;!-- submit assignments, upload presentations, etc. --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- ### Me --&gt;
+
+<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M436 160c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20zm-228-32c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H118.4C106 384 96 375.4 96 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2z"/></svg> [Gustavo C. Xavier](https://gustavocxavier.github.io/)
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg> [gcx@academico.ufpb.br](mailto:gcx@academico.ufpb.br)
+
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/></svg> Professor do DCSA/UFPB --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- ### You --&gt;
+
+&lt;!-- A quick roundtable of names, fields/interests, and coding background. --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
