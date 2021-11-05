@@ -4,7 +4,16 @@ Curso de Estatística
 Gustavo C. Xavier -- E-mail: gustavocorreiaxavier@gmail.com
 
 ## Conteúdo
-I specialize in combining data science tools and financial economics theory to advance empirical finance knowledge. My research interests are international finance, capital markets, machine learning, natural language processing, and empirical asset pricing.
+
+1. Análise Exploratória de Dados (Tipos de Variaveis, Distribuições e Frequências, Medidas Resumo e Associação entre Variáveis)
+2. Probabilidades (Teoria da Probabilidade, Variáveis Aleatórias e Noções de Simulação)
+3. Introdução a Inferência Estatística
+
+## Google Class Room
+
+[Link para a sala](https://classroom.google.com/c/NDE5ODQ0ODAwOTM5)
+
+<!--
 
 ## Welcome to GitHub Pages
 
@@ -23,12 +32,6 @@ Syntax highlighted code block
 ## Header 2
 ### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
@@ -39,10 +42,14 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 ### Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gustavocxavier/gxavier.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+-->
 
 ### Referência Básica
 
-MORETTIN, Pedro Alberto; BUSSAB, Wilton Oliveira. **Estatística básica.** Saraiva Educação SA, 2017. [`Link do Minha Biblioteca`](https://www.google.com).[^1]
+MORETTIN, Pedro Alberto; BUSSAB, Wilton Oliveira. **Estatística básica.** Saraiva Educação SA, 2017.
+
+<!--
+[`Link do Minha Biblioteca`](https://www.google.com).[^1]
 
 [^1]: O link do minha biblioteca é exclusivo para alunos UFPB. Deve-se primeiro acessar o SIGAA em outra aba para então clicar no link de acesso.
-
+-->
