@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Curso de Estatística</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gustavo C. Xavier" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Curso de Estatística
+## Semana 6: Análise Exploratória de Dados
+### Gustavo C. Xavier
+### UFPB – CCHSA
+
+---
+
+
+
+&lt;style type="text/css"&gt;
+# CSS for including pauses in printed PDF output (see bottom of lecture)
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+.code-bg-grey .remark-code, .code-bg-grey .remark-code * {
+ background-color:grey!important;
+}
+&lt;/style&gt;
+
+
+
+
+# Conteúdo
+
+1. [Tipos de Variaveis](#tipos_de_variaveis)
+
+2. [Distribuições e Frequências](#distribuicoes_e_frequencias)
+
+3. [Medidas Resumo](#medidas_resumo)
+  - [Medidas de Posição](#medidas_resumo_posica)
+  - [Medidas de Dispersão](#medidas_resumo_dispersao)
+  - [Quantis Empíricos](#medidas_resumo_quantis)
+
+---
+class: inverse, center, middle
+name: tipos_de_variaveis
+
+# Tipos de Variaveis
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+&lt;!-- Aqui é a capa --&gt;
+
+---
+
+# 1. Tipos de Variaveis
+
+### Numéricos (Quantitativos)
+- Contínuo (Tem de medir)
+  - Velocidade de um carro
+  - Tempo de espera em uma fila
+- Discreta (Pode contar)
+  - Número de pets
+  - Idade
+
+--
+
+### Categóricos (Qualitativos)
+- Nominal (Não ordenada)
+  - Casado/Solteiro
+  - Cidade que mora
+- Ordinal (Ordenada)
+
+---
+# 1. Tipos de Variáveis (cont.)
+
+Variáveis categóricas podem ser representadas como números:
+
+### Nominal (Não ordenada)
+- Casado/Solteiro (1/0)
+- Cidade que mora (1, 2, 3, ...)
+
+### Ordinal (Ordenada)
+- Discordo totalmente (1)
+- Discordo parcialmente (2)
+- Neutro (3)
+- Concordo parcialmente (4)
+- Concordo totalmente (5)
+
+---
+# 1. Tipos de Variáveis (cont.)
+## Porque o tipo de variável importa?
+
+Exemplo de variável numérica:
+
+&lt;img src="stat_week6_files/figure-html/unnamed-chunk-2-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+---
+# 1. Tipos de Variáveis (cont.)
+## Porque o tipo de variável importa? (cont.)
+
+Exemplo de variável categórica:
+
+&lt;img src="stat_week6_files/figure-html/unnamed-chunk-3-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+---
+class: inverse, center, middle
+name: distribuicoes_e_frequencias
+
+# Distribuições e Frequências
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+
+
+
+---
+# 2. Distribuições de Frequência
+
+Como resumir a tabela abaixo?
+- Uma solução é usar uma tabela de distribuição de frequência.
+
+&lt;table class="table table-striped" style="font-size: 10px; "&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; N &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; estado_civil &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; grau_instrucao &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n_filhos &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; salario &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; idade_anos &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; idade_meses &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; reg_procedencia &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.73 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.66 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.86 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.44 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.74 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.95 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.77 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.80 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.53 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.76 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.85 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 28 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.69 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.71 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.99 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.61 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17.26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 34 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.75 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19.40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+# 2. Distribuições de Frequência (cont.)
+
+## Tabela de Frequência
+
+Observe a **tabela de frequência** abaixo. Para cada possibilidade de resposta para número de filhos existe uma contagem (frequência) e o percentual do total (frequencia / frequencia_total).
+
+| N.&amp;#186; de Filhos `\(z_i\)` 	| Frequência `\(n_i\)` 	| Porcentagem 100 `\(f_i\)` 	|
+|:------------------------:	|:----------------:	|:---------------------:	|
+|             0            	|         4        	|           20          	|
+|             1            	|         5        	|           25          	|
+|             2            	|         7        	|           35          	|
+|             3            	|         3        	|           15          	|
+|             5            	|         1        	|           5           	|
+|         **Total**        	|      **20**      	|        **100**        	|
+
+---
+# 2. Distribuições de Frequência (cont.)
+
+No caso de variáveis contínuas pode-se:
+- Definir intervalos
+- Resumir a frequência de cada intervalo
+- No exemplo a remuneração foi dividida em classe de salário considerando o número de salários mínimos
+
+| Classe de salário 	| Frequência `\(n_i\)` 	| Porcentagem 100 `\(f_i\)` 	|
+|:------------------:	|:----------------:	|:---------------------:	|
+|    4,00  -  8,00  	|        10        	|         27,78         	|
+|    8,00  - 12,00   	|        12        	|         33,33         	|
+|    12,00 - 16,00  	|         8        	|         22,22         	|
+|    16,00 - 20,00  	|         5        	|         13,89         	|
+|    20,00 - 24,00  	|         1        	|          2,78         	|
+|      **Total**     	|      **20**      	|        **100**        	|
+
+---
+class: inverse, center, middle
+name: medidas_resumo
+
+# Medidas-Resumo
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+# 3. Medidas-Resumo
+
+3.1 [Medidas de Posição](#medidas_resumo_posica)
+- Resume os dados de acordo com a centralidade dos valores.
+
+
+&lt;!-- [<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"/></svg>](#medidas_resumo_dispersao) Medidas de Dispersão --&gt;
+
+3.2 [Medidas de Dispersão](#medidas_resumo_dispersao)
+- Sumarizam a variabilidade de um conjunto de observações.
+
+3.3 [Quantis Empíricos](#medidas_resumo_quantis)
+- Podem assumir uma ordem p, onde p é uma proporção que vai 0 a 100% das observações, a menor ordem é p=0% e a maior é p=100%.
+- Essas medidas são pouco sensíveis à valores extremos.
+
+&lt;!-- ... --&gt;
+&lt;!-- - Box Plots --&gt;
+&lt;!-- - Gráficos de Simetria --&gt;
+&lt;!-- - Transformações --&gt;
+
+---
+name: medidas_resumo_posica
+
+# 3.1 Medidas de Posição
+
+### 3.1.1 Moda
+  - Valor mais frequente do conjunto de valores observados
+
+### 3.1.2 Mediana
+  - Valor que assume a posição central da série de observações, quando estão ordenadas em ordem crescente
+
+### 3.1.3 Média
+  - Soma das observações dividida pelo número delas
+
+---
+
+# 3.1.1 Moda
+
+A moda é definida como a realização mais freqüente do conjunto de valores observados. 
+
+Exemplo: Considerando a tabela da aula anterior
+
+
+&lt;table class="table table-striped" style="font-size: 10px; "&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; N &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; estado_civil &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; grau_instrucao &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n_filhos &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; salario &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; idade_anos &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; idade_meses &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; reg_procedencia &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.73 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.66 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.86 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.44 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.74 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.95 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.77 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.80 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.53 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.76 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino fundamental &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.85 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 28 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.69 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.71 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.99 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; outra &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.61 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17.26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 34 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; solteiro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.75 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ensino medio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19.40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; capital &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; casado &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; superior &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; interior &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+# 3.1.1 Moda (cont.)
+
+### Exemplo 1
+
+&lt;!-- &lt;center&gt; --&gt;
+&lt;!-- &lt;img src="pics/tabela_2.5.PNG" width="60%"&gt; --&gt;
+&lt;!-- &lt;/center&gt; --&gt;
+
+| N.&amp;#186; de Filhos `\(z_i\)` 	| Frequência `\(n_i\)` 	| Porcentagem 100 `\(f_i\)` 	|
+|:------------------------:	|:----------------:	|:---------------------:	|
+|             0            	|         4        	|           20          	|
+|             1            	|         5        	|           25          	|
+|             2            	|         7        	|           35          	|
+|             3            	|         3        	|           15          	|
+|             5            	|         1        	|           5           	|
+|         **Total**        	|      **20**      	|        **100**        	|
+
+
+Qual é a moda?
+
+---
+
+# 3.1.1 Moda (cont.)
+
+### Exemplo 2
+
+&lt;!-- &lt;center&gt; --&gt;
+&lt;!-- &lt;img src="pics/tabela_2.6.PNG" width="60%"&gt; --&gt;
+&lt;!-- &lt;/center&gt; --&gt;
+
+| Classe de salário 	| Frequência `\(n_i\)` 	| Porcentagem 100 `\(f_i\)` 	|
+|:------------------:	|:----------------:	|:---------------------:	|
+|    4,00  -  8,00  	|        10        	|         27,78         	|
+|    8,00  - 12,00   	|        12        	|         33,33         	|
+|    12,00 - 16,00  	|         8        	|         22,22         	|
+|    16,00 - 20,00  	|         5        	|         13,89         	|
+|    20,00 - 24,00  	|         1        	|          2,78         	|
+|      **Total**     	|      **20**      	|        **100**        	|
+
+Qual é a moda?
+
+---
+
+# 3.1.2 Mediana
+
+### Exemplo 1
+
+A mediana é a realização que ocupa a **posição central** da série de observações, quando estão ordenadas em ordem crescente. 
+
+Considere uma variável em que as **cinco** observações de uma variável são: 3, 4, 7, 8 e 8. 
+
+Qual é a mediana?
+
+---
+
+# 3.1.2 Mediana (cont.)
+
+### Exemplo 2
+
+Quando o número de observações for par, usa-se como mediana a média aritmética das duas observações centrais.
+
+Se acrescentarmos o valor 9 à série anterior, teremos **seis** observações: 3, 4, 7, 8, 8 e 9. 
+
+Neste caso, qual é a mediana?
+
+---
+
+# 3.1.2 Mediana (cont.)
+
+### Definição
+
+Podemos dizer, então, que a **mediana** é a realização que ocupa a **posição central** da série de observações, quando estão ordenadas em ordem crescente.
+
+---
+
+# 3.1.3 Média
+
+### Exemplo 1
+Considerando uma variável que tem cinco observações como no exemplo anterior: 3, 4, 7, 8 e 8
+
+A média é calculada da seguinte forma:
+
+`\(\frac{(3+4+7+8+8)}{5} = 6\)`
+
+---
+
+# 3.1.3 Média (cont.)
+
+### Exemplo 1 (cont.)
+Observe que as cinco observações 3, 4, 7, 8 e 8 podem ser identificadas assim, `\(x_1 = 3, x_2=4, x_3=7, x_4=8, x_5=8\)`.
+
+--
+
+Poderíamos então generalizar escrevendo:
+`\(\frac{(x_1+x_2+x_3+x_4+x_5)}{5} = 6\)`
+
+--
+
+Ou ainda:
+`\(\frac{(x_1+...+x_5)}{5} = 6\)`
+
+--
+
+Ou ainda:
+`\(\frac{(x_1+...+x_n)}{n} = \bar{x}\)`
+
+--
+
+Logo, podemos generalizar da seguinte forma:
+`\(\bar{x} = \frac{1}{n} \sum_{i=1}^{n}x_i\)`
+
+---
+
+# 3.1.3 Média (cont.)
+
+Portanto, podemos dizer que média é a soma das observações dividida pelo número delas.
+
+`\(\bar{x} = \frac{1}{n} \sum_{i=1}^{n}x_i\)`
+
+---
+
+# 3.1.3 Média (cont.)
+
+### Média - Exemplo 2
+
+&lt;p&gt;
+&lt;!-- &lt;center&gt; --&gt;
+&lt;!-- &lt;img src="pics/tabela_2.5.PNG" width="80%"&gt; --&gt;
+&lt;!-- &lt;/center&gt; --&gt;
+
+| N.&amp;#186; de Filhos `\(z_i\)` 	| Frequência `\(n_i\)` 	| Porcentagem 100 `\(f_i\)` 	|
+|:------------------------:	|:----------------:	|:---------------------:	|
+|             0            	|         4        	|           20          	|
+|             1            	|         5        	|           25          	|
+|             2            	|         7        	|           35          	|
+|             3            	|         3        	|           15          	|
+|             5            	|         1        	|           5           	|
+|         **Total**        	|      **20**      	|        **100**        	|
+
+Qual é a média?
+
+---
+name: medidas_resumo_dispersao
+
+# 3.2 Medidas de Dispersão
+
+Exemplo incial, considere os dois conjuntos de dados abaixo:
+
+.pull-left[
+`\(-10, 0, 10, 20, 30\)`
+]
+.pull-right[
+`\(8, 9, 10, 11, 12\)`
+]
+
+--
+
+Calculando a média, temos...
+
+--
+
+.pull-left[
+`\(\frac{-10+0+10+20+30}{5} = 10\)`
+]
+.pull-right[
+`\(\frac{8+9+10+11+12}{5} = 10\)`
+]
+
+--
+
+Observe que apesar de possuírem a mesma média, os conjuntos não são iguais. Ou seja, eles variam de forma diferente. Vejamos algumas maneiras de medir a dispersão. Uma forma simples é calcular o intervalo entre o máximo e o mínimo.
+
+--
+
+.pull-left[
+`\(30 - (-10)=40\)`
+]
+.pull-right[
+`\(12 - 8 = 4\)`
+]
+
+--
+
+Note que o primeiro conjunto parece ter uma maior dispersão do que o segundo, mas o resultado acima não nos dá uma visão completa, uma vez que consideramos apenas os extremos.
+
+
+
+&lt;!-- O resumo de um conjunto de dados por uma única medida representativa de posição central esconde toda a informação sobre a variabilidade do conjunto de observações. Por exemplo, suponhamos que cinco grupos de alunos submeteram-se a um teste, obtendo-se as seguintes notas: --&gt;
+
+&lt;!-- grupo A (variável X): 3, 4, 5, 6, 7 --&gt;
+
+&lt;!-- grupo B (variável Y): 1, 3, 5, 7, 9 --&gt;
+
+&lt;!-- grupo C (variável Z): 5, 5, 5, 5, 5 --&gt;
+
+&lt;!-- grupo D (variável W): 3, 5, 5, 7 --&gt;
+
+&lt;!-- grupo E (variável V): 3, 5, 5, 6, 6 --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Medidas de Dispersão --&gt;
+
+&lt;!-- grupo A (variável X): 3, 4, 5, 6, 7 --&gt;
+
+&lt;!-- grupo B (variável Y): 1, 3, 5, 7, 9 --&gt;
+
+&lt;!-- grupo C (variável Z): 5, 5, 5, 5, 5 --&gt;
+
+&lt;!-- grupo D (variável W): 3, 5, 5, 7 --&gt;
+
+&lt;!-- grupo E (variável V): 3, 5, 5, 6, 6 --&gt;
+
+&lt;!-- Observe que: --&gt;
+
+&lt;!-- - Para todos os conjuntos de dados temos `\(\bar{x}=\bar{y}=\bar{z}=\bar{w}=\bar{v}=5\)` --&gt;
+&lt;!-- - Ou seja, em todos os casos sua média é 5. --&gt;
+&lt;!-- - Mas apesar de a média ser igual, os valores variam de forma diferente. E nesse caso é possível ver claramente que a média não informa nada sobre a variabilidade. --&gt;
+&lt;!-- - Por isso é tão importante termos medidas que resumem a variabilidade. --&gt;
+
+---
+# 3.2 Medidas de Dispersão (cont.)
+
+Uma outra forma é calcularmos a diferença entre cada observação e a média delas, que é `\(\bar{x}=\bar{y}=10\)`. Dessa forma, teríamos:
+
+.pull-left[
+|  `\(x_i\)`  	| `\((x_i-\bar{x})\)`	    |
+|:-------:	|:------------------:	|
+|   -10   	| (-10 - 10) = -20   	|
+|     0   	| (  0 - 10) = -10  	|
+|    10   	| ( 10 - 10) =   0  	|
+|    20   	| ( 20 - 10) =  10  	|
+|    30   	| ( 30 - 10) =  20  	|
+| **Total**	|         ?         	|
+]
+.pull-right[
+| `\(yi\)` 	|  `\((y_i-\bar{y})\)`  |
+|:----:	|:----------------:	|
+|   8  	|  ( 8 - 10) = -2  	|
+|   9  	|  ( 9 - 10) = -1  	|
+|  10  	|  (10 - 10) =  0  	|
+|  11  	|  (11 - 10) =  1  	|
+|  12  	|  (12 - 10) =  2  	|
+|  **Total**  	|  ?   	|
+]
+
+--
+
+&lt;p&gt;
+O desvio da média é bem intuitivo, mas não podemos resumir somando todos os desvios porque eles se anulam e o resultado é sempre **zero**:
+
+.pull-left[
+`\(\sum{(x_i-\bar{x})}=0\)`
+]
+.pull-right[
+`\(\sum{(y_i-\bar{y})}=0\)`
+]
+
+---
+# 3.2 Medidas de Dispersão (cont.)
+
+Uma forma de resumir a dispersão dos dados é calcular o somatório de cada desvio ao quadrado. 
+
+.pull-left[
+| `\(xi\)` 	| `\((x_i-\bar{x})\)`	    | `\((x_i-\bar{x})^2\)` 	      |
+|:----:	|:------------------:	|:------------------------:	|
+| -10  	|        -20         	| `\((-10 - 10)^2 = 400\)`    	|
+|   0  	|        -10        	| `\((  0 - 10)^2 = 100\)`     	|
+|  10  	|          0        	| `\(( 10 - 10)^2 =   0\)`     	|
+|  20  	|         10        	| `\(( 20 - 10)^2 = 100\)`    	|
+|  30  	|         20        	| `\(( 30 - 10)^2 = 400\)`     	|
+| **Total** |      0        	| 1000                     	|
+]
+.pull-right[
+| `\(yi\)` 	|  `\((y_i-\bar{y})\)`  |  `\((y_i-\bar{y})^2\)`	    |
+|:----:	|:----------------:	|:---------------------:	|
+|   8  	|       -2          | `\(( 8 - 10)^2 = 4\)`   	|
+|   9  	|       -1        	| `\(( 9 - 10)^2 = 1\)`  	|
+|  10  	|        0        	| `\((10 - 10)^2 = 0\)`  	|
+|  11  	|        1        	| `\((11 - 10)^2 = 1\)`  	|
+|  12  	|        2        	| `\((12 - 10)^2 = 4\)`  	|
+|  **Total**  	|  0      	| 10 |
+]
+
+--
+
+Além de os valores não se anularem, é possível chegar a uma única medida que resume a dispersão. Se dividirmos o somatório total pelo número de observações temos o que chamamos de **variância**:
+
+.pull-left[
+`\(\frac{\sum{(x_i-\bar{x})^2}}{n}=\frac{1000}{5}=\boxed{200}\)`
+]
+
+.pull-right[
+`\(\frac{\sum{(y_i-\bar{y})^2}}{n}=\frac{4+1+0+1+4}{5}=\frac{10}{5}=\boxed{2}\)`
+]
+
+---
+# 3.2 Medidas de Dispersão: Variância
+
+No exemplo anterior, a variável `\(x\)`  assume as seguintes observações `\(x = \{-10, 0, 10, 20, 30\}\)`.
+Logo, sua **variância** `\((\sigma^2)\)` é dada por:
+
+`\(\sigma^2=\frac{{(-10 - 10)}^2+{(  0 - 10)}^2+{( 10 - 10)}^2+{( 20 - 10)}^2+{( 30 - 10)}^2}{5}\)`
+
+--
+
+Note que estamos calculando a média de `\((x_i-\bar{x})^2\)`, que por sua vez é o quadrado do desvio de cada observação para a média. Continuando o cálculo:
+
+`\(\sigma^2=\frac{400+100+0+100+400}{5}=\frac{1000}{5} \rightarrow \boxed{\sigma^2=200}\)`
+
+--
+
+De forma genérica realizamos o cálculo de:
+
+`\(\sigma^2=\frac{(x_1-\bar{x})^2+(x_2-\bar{x})^2+(x_3-\bar{x})^2+(x_4-\bar{x})^2+(x_5-\bar{x})^2}{n}=\frac{(x_1-\bar{x})^2+...+(x_5-\bar{x})^2}{n}\)`
+
+Se resumirmos um pouco mais, chegamos a fórmula matemática da variância:
+
+`\(\boxed{\sigma^2=\frac{\sum{(x_i-\bar{x})^2}}{n}}\)`
+
+.font40[Em breve, veremos que a variância de uma amostra será calculada usando-se o denominador n – 1, em vez de n, mas isso será explicado nas próximas aulas. Por enquanto, vamos nos concentrar nessa forma de cálculo.]
+
+---
+# 3.2Medidas de Dispersão: Desvio padrão
+
+.font90[
+Sendo a variância uma medida de dimensão igual ao quadrado da dimensão dos dados (por exemplo, se os dados são expressos em cm, a variância será expressa em cm2), pode causar problemas de interpretação. Costuma-se usar, então, o desvio padrão, que é definido como a raiz quadrada positiva da variância, ou seja:
+
+`\(\boxed{\sigma=\sqrt{\sigma^2}}\)`
+]
+--
+
+.font90[
+Logo, para a variável `\(x\)` que assume as seguintes observações `\(x = \{-10, 0, 10, 20, 30\}\)` e sua variância é `\(\sigma^2=200\)`, o desvio padrão é dado por:
+
+`\(\sigma=\sqrt{200}=10\sqrt{2}=14,14\)`
+]
+
+--
+
+.font90[
+Já para a variável `\(y\)` que assume as observações `\(y = \{8, 9, 10, 11, 12\}\)` com variância é `\(\sigma^2=2\)`, o desvio padrão é dado por:
+
+`\(\sigma=\sqrt{2}=1,14\)`
+]
+
+--
+
+.font90[
+Note que `\(x\)` tem um desvio padrão 10 vezes maior do que o desvio padrão de `\(y\)`, o que faz todo sentido intuitivamente. Ou seja, nos dá um senso do quanto longe as observações estão da média. 
+]
+
+---
+# 3.2 Medidas de Dispersão: Desvio médio
+
+Observação: Existe uma medida de dispersão que considera os desvios em valor absoluto, o **desvio médio (dm)**.
+
+Para entender, vamos calcular o desvio médio da variável `\(x = \{-10, 0, 10, 20, 30\}\)`:
+
+
+`\(dm(x)=\frac{\left | -10 - 10 \right | + \left| 0 - 10\right|+\left|10 - 10\right|+\left|20 - 10\right|+\left|30 - 10\right|}{5}\)`
+
+`\(dm(x)=\frac{20 + 10 + 0 + 10 + 20 }{5}=\frac{60}{5}=12\)`
+
+--
+
+Logo, de forma genérica o desvio médio é dado por:
+
+`\(dm(x)=\frac{\sum{\left|x-\bar{x}\right|}}{n}\)`
+
+--
+
+Assim como a variância, o desvio médio é uma medida de dispersão calculada em relação à média das observações. Apesar de ser mais intuitiva do que o desvio padrão, o desvio médio implica em alguns desafios para cálculos matemáticos mais complexos. Por isso é muito mais comum o uso da variância e do desvio-padrão.
+
+---
+# 3.2 Medidas de Dispersão: Exercício
+
+Calcule a média e as medidas de dispersao das seguintes variaveis:
+
+grupo A (variável X): `\(3, 4, 5, 6, 7\)`
+
+grupo B (variável Y): `\(1, 3, 5, 7, 9\)`
+
+grupo C (variável Z): `\(5, 5, 5, 5, 5\)`
+
+grupo D (variável W): `\(3, 5, 5, 7\)`
+
+grupo E (variável V): `\(3, 5, 5, 6, 6\)`
+
+---
+class: inverse, center, middle
+name: medidas_resumo_quantis
+
+# Quantis Empíricos
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+Por hoje é só, na próxima aula iremos trabalhar os quantis empíricos.
+
+---
+### Obrigado!
+
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"/></svg> https://github.com/uo-ec607 --&gt;
+
+&lt;!-- You'll soon receive access to a quarter-specific copy of this repo, where we  --&gt;
+&lt;!-- submit assignments, upload presentations, etc. --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- ### Me --&gt;
+
+<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M436 160c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20zm-228-32c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H118.4C106 384 96 375.4 96 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2z"/></svg> [Gustavo C. Xavier](https://gustavocxavier.github.io/)
+
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg> [Endereço da apresentação para acesso online.](https://gustavocxavier.github.io/estatistica/week6) --&gt;
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg> [gcx@academico.ufpb.br](mailto:gcx@academico.ufpb.br)
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> [@gustavocxavier](https://twitter.com/gustavocxavier)
+
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> --&gt;
+
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/></svg> Professor do DCSA/UFPB --&gt;
+
+&lt;!-- ### You --&gt;
+
+&lt;!-- A quick roundtable of names, fields/interests, and coding background. --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
