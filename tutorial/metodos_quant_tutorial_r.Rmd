@@ -1,0 +1,70 @@
+---
+title: "Example Document"
+author: "Your name here"
+output:
+  html_document:
+    self_contained: false
+---
+
+```{r, include=FALSE}
+tutorial::go_interactive()
+```
+
+[Tutorial Basics](https://datacamp.github.io/tutorial/articles/tutorial-basics.html)
+
+# Fiddles
+
+By default, `tutorial` will convert all R chunks.
+
+
+```{r}
+a <- 2
+b <- 3
+
+a + b
+```
+
+# Pre-code
+
+Pre-load some data or load some packages beforehand
+
+```{r ex="play_around", type="pre-exercise-code"}
+c <- 4
+library(stringr)
+```
+
+```{r ex="play_around", type="sample-code"}
+a <- 2
+b <- 3
+```
+
+# Interactive exercises
+
+```{r ex="create_a", type="pre-exercise-code"}
+b <- 5
+```
+
+```{r ex="create_a", type="sample-code"}
+# Create a variable a, equal to 5
+
+
+# Print out a
+
+```
+
+```{r ex="create_a", type="solution"}
+# Create a variable a, equal to 5
+a <- 5
+
+# Print out a
+a
+```
+
+```{r ex="create_a", type="sct"}
+test_object("a")
+test_output_contains("a", incorrect_msg = "Make sure to print out `a`.")
+success_msg("Great!")
+```
+
+These tests to check whether the student submitted the correct code, can be written with the functions from the `testwhat` package.
+
