@@ -1,0 +1,76 @@
+---
+title: "R Simple"
+author: "Ambiente de desenvolvimento bem simples para sentir um gostinho ou fazer testes simples."
+output: html_document
+---
+
+```{r, include=FALSE}
+tutorial::go_interactive()
+
+# if (!require(dados)) { install.packages("dados") ; library(dados) }
+# glimpse(mpg)
+# glimpse(dados::milhas)
+# dput(dados::milhas$classe)
+# dput(names(dados::milhas))
+
+# https://datacamp.github.io/tutorial/articles/tutorial-basics.html
+```
+
+<!-- 
+## Olá! Seja bem vindo!
+
+Este é um ambiente R desenvolvido por uma empresa chamada DataCamp. Apesar de muito simples, é ideal para um primeiro contato ou para pequenos testes usando o R.
+
+Então o que está esperando? Experimente apertar o botão `Run` para rodar o `script.R` que consta abaixo. E veja o que acontece.
+
+-->
+
+```{r ex="play_around", type="pre-exercise-code"}
+# Código para rodar antes
+```
+
+```{r ex="play_around", type="sample-code"}
+# Exemplo 1: Operação Básica
+x <- 2 # Salvar o valor 2 em uma variável chamada x
+y <- 3
+# Fazer uma operação básica com essas duas variáveis
+x + y
+
+# Exemplo 2: Usando funções do R
+# Criar uma série de dados usando a função c()
+serie_de_dados <- c(2, 3, 4, 5)
+# Calcular a média da serie usando a função mean()
+mean(serie_de_dados)
+
+# Note que esta linha não é executada.
+# O R ignora o que vem depois do hashtag(#).
+# Chamamos essa parte de comentário.
+# Os comentários nos ajudam a entender o código.
+```
+
+
+<!--
+## O que aconteceu?
+
+Perceba que o código foi enviado para o interpretador do R que fica no servidor do DataCamp, que por sua vez executou o código do `script.R` e retornou alguns resultados para nossa tela na aba `R Console`.
+
+Agora que você rodou o código exemplo, experimente fazer o seguinte:
+
+1. Clicar no console, digitar `3+2` e apertar `ENTER`.
+2. Tente outras operações matemáticas como: subtração (`3-2`), multiplicação (`3*2` para $3\times2$), divisão (`3/2` para $\frac{3}{2}$) ou exponenciação (`3^2` para $3^2$).
+3. Limpe o console clicando nele e apertando a tecla `Ctrl`+`L` do seu teclado.
+4. Altere o script fazendo algumas modificações nos valores ou na operação e aperte `Run` novamente.
+5. Você pode até remover todo o script exemplo e tentar rodar o seu próprio código. Mas lembre-se que este é um ambiente de desenvolvimento R bem limitado.
+
+## E aí? Vamos para um negócio mais sério?
+
+A melhor forma de usar o R é através do R Studio instalado localmente no seu computador. Para tanto, siga as instruções abaixo:
+  1. Instruções de como instalar o interpretador *R* [clique aqui](https://livro.curso-r.com/1-1-instalacao-do-r.html%5D).
+  2. Instruções de como instalar o ambiente de desenvolvimento *R Studio* [clique aqui](https://livro.curso-r.com/1-2-instalacao-do-rstudio.html%5D).
+  
+  
+Se quiser tentar o R Studio online você pode fazer uma conta em [rstudio.cloud](rstudio.cloud). O R Studio Cloud não é tão estável quanto a versão local mas da para exercitar bem.
+
+Uma outra opção prática é usar o R online através do google colab, basta acessar o link [colab.to/r](colab.to/r) e usar uma conta sua do gmail. O google colab pode ser útil para alguns testes rápidos ou para usuários mais experientes. Se você está começando e realmente quer usar uma versão online, recomendo o R Studio Cloud.
+
+-->
