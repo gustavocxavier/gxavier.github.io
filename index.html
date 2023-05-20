@@ -1,227 +1,135 @@
-<!DOCTYPE HTML>
-<!--
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Gustavo Correia Xavier</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="landing is-preload">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gustavo.cx</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .link-item {
+      background-color: #444;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px;
+      width: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .link-item a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+    }
+    
+    .link-item a:hover {
+      color: #ff6600;
+    }
+    
+    .link-item i {
+      margin-right: 5px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var setVanta = () => {
+        if (window.VANTA) window.VANTA.NET({
+          el: ".vanta-effect",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x3c3c3c,
+          backgroundColor: 0x1e1e28,
+          points: 12.00
+        });
+      };
+      setVanta();
+      window.edit_page.Event.subscribe("Page.beforeNewOneFadeIn", setVanta);
+    });
+  </script>
+</head>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Gustavo Correia Xavier</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="#one">Intro</a></li>
-											<li><a href="#footer">Links</a></li>
-											<!-- <li><a href="#footer"></a></li> -->
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+<body>
+  <!-- Vanta.js effect element -->
+  <div class="container">
+  <div class="vanta-effect">
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>Gustavo correia xavier</h2>
-							<p>welcome to my world</p>
-							<!-- <p>Hi, I'm a data analyst and data scientist based on Brazil and,<br />
-							   I love to help businesses make the right data-driven decisions.
-							 site template freebie<br />
-							crafted by <a href="http://html5up.net">HTML5 UP</a>. </p>-->
-							<!-- <ul class="actions special">
-								<li><a href="#footer" class="button primary">GET IN TOUCH</a></li>
-							</ul> -->
-						</div>
-						<a href="#one" class="more scrolly">Learn More</a>
-					</section>
+    <!-- Image and name container -->
+    <div style="text-align: center">
+      <img src="images/profile.png" class="w3-margin" alt="image" width="150px" height="150px" style="border-radius: 50%;">
+      <p><span class="name w3-padding w3-pink w3-round" style="font-weight: bolder;">@gustavocxavier</span></p>
+      <!-- <p style="font-weight: bolder;">Check out my links!</p> -->
+    </div>
+    <i class="fab fa-twitter fa-lg"></i> &nbsp;
+    <i class="fab fa-linkedin fa-lg"></i> &nbsp;
+    <i class="fab fa-instagram fa-lg"></i> &nbsp;
+    <i class="fab fa-github fa-lg"></i>
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>make it simple,<br />
-								but significant.</h2>
-								<p>Hi, I'm a data analyst and data scientist based on Brazil and,<br />
-									I love to help businesses make the right data-driven decisions.<br />
-									my personal academic website, a portfolio of my data projects and a blog
-								</p>
-								<!-- <p>I have a passion to use code and data to solve real problems.<br />
-								</p> -->
-							</header>
-							<ul class="icons major">
-								<li><span class="icon solid fa-graduation-cap major style1"><span class="label">academic</span></span></li>
-								<li><span class="icon solid fa-laptop major style2"><span class="label">laptop</span></span></li>
-								<li><span class="icon solid fa-code major style3"><span class="label">code</span></span></li>
-								<li><span class="icon solid fa-chart-line major style4"><span class="label">chart</span></span></li>
-							</ul>
-						</div>
-						<a href="#footer" class="more scrolly">next</a>
-						<br />
-						<br />
-					</section>
+    <!-- Links section 1 -->
+    <!-- <h5 class="margin-top-2" style="text-align: center;">MY SOCIAL NETWORKS</h5> -->
+    <div class="links-container">
+      <p></p>
+      <div class="link-item" style="text-align: center;">
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">
+          <!-- <i class="fas fa-graduation-cap"></i> &nbsp; -->
+           Personal Academic Website
+        </a>
+      </div>
+      <p></p>
+      <div class="link-item" style="text-align: center;">
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">
+          <!-- <i class="fas fa-chart-line"></i> &nbsp; -->
+          Data Science Portfolio
+        </a>
+      </div>
+      <p></p>
+      <div class="link-item">
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">
+          <!-- <i class="fas fa-pen-nib"></i> -->
+          Personal Blog
+        </a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Content for the effect -->
 
-				<!-- Two Narrative 1 -->
-					<!-- <section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>Magna primis lobortis<br />
-								sed ullamcorper</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-					</section> -->
+  </div>
+</body>
 
-				<!-- Three Narratie 2 -->
-					<!-- <section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>my websites...</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
-							</header>
-							<ul class="features">
-								<li class="icon fa-paper-plane">
-									<h3>Arcu accumsan</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon solid fa-laptop">
-									<h3>Ac Augue Eget</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon solid fa-code">
-									<h3>Mus Scelerisque</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon solid fa-headphones-alt">
-									<h3>Mauris Imperdiet</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-heart">
-									<h3>Aenean Primis</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-flag">
-									<h3>Tortor Ut</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-							</ul>
-						</div>
-					</section> -->
-
-				<!-- CTA -->
-					<!-- <section id="cta" class="wrapper style4"> -->
-						<!-- <div class="inner">
-							<header>
-								<h2>Choose one!</h2>
-								<p>
-									Click in the icon to access the choosed page
-								</p>
-							</header>
-							<ul class="actions stacked">
-								<li><a href="#" class="button fit primary">Activate</a></li>
-								<li><a href="#" class="button fit">Learn More</a></li>
-							</ul>
-						</div> -->
-						<!-- <ul class="features">
-							<li class="icon solid fa-graduation-cap">
-								<a href="#one" class="button fit">Academic</a>
-								<h3>Ac Augue Eget</h3>
-								<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								
-							</li>
-							<li class="icon solid fa-chart-line">
-								<h3>Mus Scelerisque</h3>
-								<a href="#one" class="button fit">Data Projects</a>
-								<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-							</li>
-							<li class="icon solid fa-pen-nib">
-								<h3>Mauris Imperdiet</h3>
-								<a href="#one" class="button fit">Blog</a>
-								<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-							</li>
-						</ul> -->
-
-					<!-- </section> -->
-
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="features">
-							<li class="icon solid fa-graduation-cap">
-								<a href="http://gustavo.cx" class="button fit">Academic</a>
-								<!-- <h3>Ac Augue Eget</h3> -->
-								<!-- <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p> -->
-								
-							</li>
-							<li class="icon solid fa-chart-line">
-								<!-- <h3>Mus Scelerisque</h3> -->
-								<a href="#one" class="button fit">Data Projects</a>
-								<!-- <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p> -->
-							</li>
-							<li class="icon solid fa-pen-nib">
-								<!-- <h3>Mauris Imperdiet</h3> -->
-								<a href="#one" class="button fit">Blog</a>
-								<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-							</li>
-						</ul>
-						<p></p>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-							<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
-							<li><a href="#" class="icon brands fa-github"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<!-- 2023 © Marcos Rezende's UX Design Portfolio.  -->
-							<li>2023 &copy; Gustavo Xavier</li>
-							<li>Based in Brazil, working globally.</li>
-							<span class="icon solid fa-globe"><span class="label">global</span></span> BR
-						</ul>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
